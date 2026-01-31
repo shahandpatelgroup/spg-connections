@@ -1,26 +1,29 @@
+
+import streamlit as st
 import smtplib
 import ssl
-import getpass
-import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
+import os
 
-# Configuration
-SENDER_EMAIL = "ShahandPatelgroup@gmail.com"
+# Page Config
+st.set_page_config(page_title="Ask_SPG Mail Sender", page_icon="🚀")
+
+# Constants
 SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 465  # SSL
+SMTP_PORT = 465
 
-def create_email_content(receiver_email):
+def create_email_content(sender_email, receiver_email):
     """
-    Creates the MIME object with HTML banner and embedded image.
+    Creates the MIME object with HTML banner using the updated B2B content.
     """
     msg = MIMEMultipart("related")
     msg["Subject"] = "Partnership Opportunity with Ask_SPG 🚀 We bring you Customers!"
-    msg["From"] = SENDER_EMAIL
+    msg["From"] = sender_email
     msg["To"] = receiver_email
 
-    # HTML content with inline CSS (Updated B2B Content)
+    # HTML content with inline CSS (Updated Blue Theme)
     html = """
     <html>
       <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; margin: 0;">
@@ -86,48 +89,95 @@ def create_email_content(receiver_email):
     # Attach HTML
     msg.attach(MIMEText(html, "html"))
 
-    # Attach Image
-    logo_path = "ask_spg_logo.png"
-    if os.path.exists(logo_path):
-        with open(logo_path, "rb") as f:
+    # Attach Image (Local Check)
+    logo_filename = "ask_spg_logo.png"
+    if os.path.exists(logo_filename):
+        with open(logo_filename, "rb") as f:
             img_data = f.read()
             image = MIMEImage(img_data)
             image.add_header("Content-ID", "<ask_spg_logo>")
-            image.add_header("Content-Disposition", "inline", filename="ask_spg_logo.png")
+            image.add_header("Content-Disposition", "inline", filename=logo_filename)
             msg.attach(image)
-    else:
-        print("Warning: Logo image not found. Email will send without logo.")
-
+    
     return msg
 
-def send_test_email():
-    print("--- Ask_SPG Auto Mail Sender ---")
-    print(f"Sender: {SENDER_EMAIL}")
+def main():
+    st.title("🚀 Ask_SPG Mail Sender")
+    st.markdown("Send bulk emails to partners with the **Ask_SPG B2B Template**.")
+
+    # Sidebar for Credentials
+    with st.sidebar:
+        st.header("🔑 Credentials")
+        sender_email = st.text_input("Sender Email", value="ShahandPatelgroup@gmail.com")
+        password = st.text_input("App Password", type="password", help="Use your Google App Password")
+        
+        st.info("Don't share your App Password with anyone.")
+
+    # Main Area
+    st.subheader("1. Recipient List")
+    uploaded_file = st.file_uploader("Upload CSV (must contain 'Email' column)", type=["csv"])
     
-    password = getpass.getpass("Enter your Google App Password: ")
-    receiver_email = input("Enter Recipient Email (to test): ")
+    manual_emails = st.text_area("Or paste emails manually (comma separated):", placeholder="client1@gmail.com, client2@yahoo.com")
 
-    if not password or not receiver_email:
-        print("Error: Missing password or recipient.")
-        return
+    # Image Uploader for Logo (Optional but good for dynamic logo)
+    st.subheader("2. Branding")
+    logo_file = st.file_uploader("Upload Logo (ask_spg_logo.png)", type=["png", "jpg"])
+    if logo_file:
+        with open("ask_spg_logo.png", "wb") as f:
+            f.write(logo_file.getbuffer())
+        st.success("Logo uploaded!")
 
-    try:
-        context = ssl.create_default_context()
-        print("\nConnecting to Gmail Server...")
+    if st.button("Send Emails ✉️", type="primary"):
+        if not password:
+            st.error("Please enter your App Password in the sidebar.")
+            return
+
+        # Gather emails
+        email_list = []
+        if uploaded_file:
+            import pandas as pd
+            try:
+                df = pd.read_csv(uploaded_file)
+                if "Email" in df.columns:
+                    email_list.extend(df["Email"].dropna().tolist())
+                else:
+                    st.error("CSV must have an 'Email' column.")
+            except Exception as e:
+                st.error(f"Error reading CSV: {e}")
         
-        with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT, context=context) as server:
-            server.login(SENDER_EMAIL, password)
-            print("Message created...")
-            message = create_email_content(receiver_email)
-            
-            print("Sending email...")
-            server.sendmail(SENDER_EMAIL, receiver_email, message.as_string())
-            
-        print(f"\n✅ Email successfully sent to {receiver_email}!")
+        if manual_emails:
+            manual_list = [e.strip() for e in manual_emails.split(",") if "@" in e]
+            email_list.extend(manual_list)
         
-    except Exception as e:
-        print(f"\n❌ Error sending email: {e}")
-        print("Tip: Ensure you are using an 'App Password', not your regular login password.")
+        email_list = list(set(email_list)) # Remove duplicates
+
+        if not email_list:
+            st.warning("No valid emails found to send.")
+            return
+
+        # Sending Process
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        
+        try:
+            context = ssl.create_default_context()
+            with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT, context=context) as server:
+                status_text.text("Connecting to Gmail...")
+                server.login(sender_email, password)
+                
+                for i, receiver in enumerate(email_list):
+                    status_text.text(f"Sending to {receiver} ({i+1}/{len(email_list)})...")
+                    
+                    msg = create_email_content(sender_email, receiver)
+                    server.sendmail(sender_email, receiver, msg.as_string())
+                    
+                    progress_bar.progress((i + 1) / len(email_list))
+            
+            status_text.success(f"✅ Successfully sent {len(email_list)} emails!")
+            st.balloons()
+            
+        except Exception as e:
+            st.error(f"❌ Error during sending: {e}")
 
 if __name__ == "__main__":
-    send_test_email()
+    main()
