@@ -35,8 +35,8 @@ def create_email_content(receiver_email):
           </div>
 
           <!-- Body Content -->
-          <div style="padding: 30px; color: #333333; line-height: 1.6;">
-            <p style="font-size: 18px; color: #0d47a1; margin-top: 0; text-align: center;"><strong>Hello Business Partner,</strong></p>
+          <div style="padding: 30px; color: #333333; line-height: 1.6; font-size: 18px;">
+            <p style="font-size: 22px; color: #0d47a1; margin-top: 0; text-align: center;"><strong>Hello Business Partner,</strong></p>
             <p style="text-align: center; margin-bottom: 30px;">
               We are <strong>Ask_SPG</strong>, your bridge to qualified customers.
             </p>
@@ -60,7 +60,7 @@ def create_email_content(receiver_email):
                 </ul>
             </div>
 
-            <p style="text-align: center; font-size: 15px;">
+            <p style="text-align: center; font-size: 18px;">
                 We act as a <strong>mediator</strong>. We send you the requirement -> You send the best quote -> We close the deal.
             </p>
 
@@ -74,8 +74,8 @@ def create_email_content(receiver_email):
 
             <hr style="border: 0; border-top: 1px solid #bbdefb; margin: 30px 0;">
             
-            <h3 style="margin-bottom: 15px; font-size: 16px; color: #0d47a1; text-align: center;">📌 Ask_SPG Areas of Work:</h3>
-            <ul style="list-style: none; padding: 0; font-size: 14px; color: #0d47a1; text-align: center;">
+            <h3 style="margin-bottom: 15px; font-size: 20px; color: #0d47a1; text-align: center;">📌 Ask_SPG Areas of Work:</h3>
+            <ul style="list-style: none; padding: 0; font-size: 16px; color: #0d47a1; text-align: center;">
               <li style="display: inline-block; background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">✈️ Travel & Holidays</li>
               <li style="display: inline-block; background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">🏔️ Indian Treks</li>
               <li style="display: inline-block; background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">🛠️ Local Services</li>
