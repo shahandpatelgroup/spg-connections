@@ -53,8 +53,8 @@ def create_email_content(receiver_email):
 
             <hr style="border: 0; border-top: 1px solid #bbdefb; margin: 20px 0;">
             
-            <h3 style="margin-bottom: 15px; font-size: 16px; color: #0d47a1;">📌 Ask_SPG Areas of Work:</h3>
-            <ul style="list-style: none; padding: 0; font-size: 14px; color: #0d47a1; display: flex; flex-wrap: wrap; gap: 10px;">
+            <h3 style="margin-bottom: 15px; font-size: 16px; color: #0d47a1; text-align: center;">📌 Ask_SPG Areas of Work:</h3>
+            <ul style="list-style: none; padding: 0; font-size: 14px; color: #0d47a1; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
               <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">✈️ Travel & Holidays</li>
               <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">🏨 Hotel Bookings</li>
               <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">🛠️ Local Services</li>
@@ -71,11 +71,11 @@ def create_email_content(receiver_email):
             <p style="margin: 5px 0;">Instagram: <a href="https://instagram.com/ask_spg" style="color: #64b5f6; text-decoration: none;">@Ask_SPG</a></p>
             <p style="margin: 5px 0;">Email: <a href="mailto:ShahandPatelgroup@gmail.com" style="color: #64b5f6; text-decoration: none;">ShahandPatelgroup@gmail.com</a></p>
             
-            <p style="margin-top: 15px; font-size: 11px; opacity: 0.5;">
-               If you want to remove your email from our list, please reply to this mail with "UNSUBSCRIBE".
+            <p style="margin-top: 15px; font-size: 11px; opacity: 0.6;">
+               To opt out of future partnership opportunities, please reply with "UNSUBSCRIBE".
             </p>
 
-            <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">&copy; 2024 Ask_SPG. All rights reserved.</p>
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">&copy; 2026 Ask_SPG. All rights reserved.</p>
           </div>
 
         </div>
