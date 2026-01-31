@@ -39,40 +39,24 @@ def create_email_content(sender_email, receiver_email):
 
           <!-- Body Content -->
           <div style="padding: 30px; color: #333333; line-height: 1.6; font-size: 18px;">
-            <p style="font-size: 22px; color: #0d47a1; margin-top: 0; text-align: center;"><strong>Hello Business Partner,</strong></p>
-            <p style="text-align: center; margin-bottom: 30px;">
-              We are <strong>Ask_SPG</strong>, your bridge to qualified customers.
-            </p>
+            <p style="font-size: 22px; color: #0d47a1; margin-top: 0;"><strong>Hello Business Partner,</strong></p>
+            <p>We are <strong>Ask_SPG</strong>, a service aggregator that connects customers with the best service providers in the market.</p>
             
-            <!-- Why Partner Section -->
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; margin-bottom: 25px;">
-                <h3 style="color: #0d47a1; margin-top: 0; text-align: center; margin-bottom: 15px;">🚀 Why Partner with Ask_SPG?</h3>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                        <span style="font-size: 18px; margin-right: 10px;">✅</span> 
-                        <span><strong>Zero Marketing Cost:</strong> We bring ready-to-buy customers to you.</span>
-                    </li>
-                    <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                        <span style="font-size: 18px; margin-right: 10px;">✅</span> 
-                        <span><strong>Verified Leads:</strong> No time-wasting; only genuine inquiries.</span>
-                    </li>
-                    <li style="margin-bottom: 0px; display: flex; align-items: center;">
-                        <span style="font-size: 18px; margin-right: 10px;">✅</span> 
-                        <span><strong>High Conversion:</strong> We filter prospects to match your specific services.</span>
-                    </li>
-                </ul>
-            </div>
+            <h3 style="color: #0d47a1; margin-bottom: 5px; font-size: 20px;">🤝 How we assist you:</h3>
+            <p style="margin-top: 0;">We receive numerous travel and holiday inquiries from our client base daily. We act as a <strong>mediator</strong> to filter and verify these requirements.</p>
 
-            <p style="text-align: center; font-size: 18px;">
-                We act as a <strong>mediator</strong>. We send you the requirement -> You send the best quote -> We close the deal.
-            </p>
+            <h3 style="color: #0d47a1; margin-bottom: 5px; font-size: 20px;">🚀 Our Proposal:</h3>
+            <p style="margin-top: 0;">We would like to <strong>redirect these customer requirements to you</strong>.<br>
+            When we share a requirement, we request that you provide us with your <strong>best quotation/package</strong>. If your service and rates match our customer's expectations, we close the deal for you.</p>
 
-            <!-- CTA Section -->
-            <div style="text-align: center; margin: 30px 0;">
-                <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; display: inline-block; width: 80%;">
-                    <p style="margin: 0 0 10px; font-weight: bold; color: #0d47a1;">Interested in growing with us?</p>
-                    <a href="mailto:ShahandPatelgroup@gmail.com?subject=Partnership%20Interest" style="background-color: #1976d2; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block;">Reply "I'm Interested"</a>
-                </div>
+            <div style="background-color: #e3f2fd; padding: 20px; border-radius: 5px; margin: 25px 0; border-left: 5px solid #1976d2; color: #0d47a1;">
+               <strong style="font-size: 18px;">Ready to receive inquiries?</strong><br>
+               <span style="color: #333; display: block; margin-bottom: 15px;">Reply to this email letting us know you are interested, and we will start sharing relevant travel requirements with you immediately.</span>
+               
+               <!-- CTA Button -->
+               <div style="text-align: left; margin-top: 10px;">
+                   <a href="mailto:ShahandPatelgroup@gmail.com?subject=Partnership%20Interest" style="background-color: #1976d2; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block;">Reply "I'm Interested"</a>
+               </div>
             </div>
 
             <hr style="border: 0; border-top: 1px solid #bbdefb; margin: 30px 0;">
