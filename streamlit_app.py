@@ -57,14 +57,14 @@ def create_email_content(sender_email, receiver_email):
             <hr style="border: 0; border-top: 1px solid #bbdefb; margin: 20px 0;">
             
             <h3 style="margin-bottom: 15px; font-size: 16px; color: #0d47a1; text-align: center;">📌 Ask_SPG Areas of Work:</h3>
-            <ul style="list-style: none; padding: 0; font-size: 14px; color: #0d47a1; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-              <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">✈️ Travel & Holidays</li>
-              <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">🏨 Hotel Bookings</li>
-              <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">🛠️ Local Services</li>
-              <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">💻 IT Solutions</li>
-              <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">📦 Product Sourcing</li>
-              <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">🏗️ Interiors</li>
-              <li style="background: #e3f2fd; padding: 5px 12px; border-radius: 15px; border: 1px solid #90caf9;">🚗 Vehicle Transport</li>
+            <ul style="list-style: none; padding: 0; font-size: 14px; color: #0d47a1; display: flex; flex-wrap: wrap; justify-content: center;">
+              <li style="background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">✈️ Travel & Holidays</li>
+              <li style="background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">🏨 Hotel Bookings</li>
+              <li style="background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">🛠️ Local Services</li>
+              <li style="background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">💻 IT Solutions</li>
+              <li style="background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">📦 Product Sourcing</li>
+              <li style="background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">🏗️ Interiors</li>
+              <li style="background: #e3f2fd; padding: 8px 15px; border-radius: 15px; border: 1px solid #90caf9; margin: 5px;">🚗 Vehicle Transport</li>
             </ul>
           </div>
 
